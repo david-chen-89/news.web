@@ -10,6 +10,12 @@ $(document).ready(function($) {
     var navHomeY = nav.offset().top;
     var isFixed = false;
     var $w = $(window);
+    
+    // change #nav width according to screen size 
+    $w.resize(function() {
+    	nav.css({width: $w.width()});
+    });
+    
     $w.scroll(function() {
         var scrollTop = $w.scrollTop();
         var shouldBeFixed = scrollTop > navHomeY;
@@ -19,7 +25,6 @@ $(document).ready(function($) {
                 top: 0,
                 left: nav.offset().left,
                 width: nav.width()
-//                opacity: 0.9
             });
             isFixed = true;
         }
