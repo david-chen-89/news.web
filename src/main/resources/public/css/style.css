@@ -23,10 +23,14 @@ time, mark, audio, video {
 
 p{
 	font-size: 14px;
-	letter-spacing: 1px;
 }
-p.content{
+p.content {
+	font-size: 16px;
+	letter-spacing: 0.1em;
 	text-indent: 2em;
+	text-align: justify;
+	/*  text-justify: inter-word; */
+	text-justify: distribute-all-lines; /*ie6-8*/
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -195,6 +199,7 @@ a {
 	-o-transition: color 0.2s linear;
 	outline: none;
 	color: #509ABD;
+	font-size: 14px;
 }
 
 a:hover {
@@ -475,6 +480,10 @@ p {
 	padding: 1px 0px;
 }
 
+#logo > a{
+	color: #bbb;
+}
+
 #header-ads {
 	width: 728px;
 	height: 78px;
@@ -562,7 +571,6 @@ html[xmlns] .slides {display: block;}
 	text-overflow: ellipsis;
 	max-height: 65px;
 	height: 44px;
-	display: inline-block;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
@@ -1009,11 +1017,13 @@ ul.sf-menu li.sfHover li ul { top: -999em }
 
 .post-container h3 {
 	font-weight: bold;
-	max-height: 32px;
-	font-size: 13px;
+	max-height: 42px;
 	line-height: 16px;
 	margin-bottom: 2px;
 	overflow: hidden;
+	display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .post-container h3 a:hover {
