@@ -495,7 +495,7 @@ p {
 
 .flexslider {margin: 0; padding: 0;}
 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
-.flexslider .slides img {max-width: 100%; display: block; width: 630px !important; height: auto !important; }
+.flexslider .slides img {max-width: 100%; display: block; width: 630px !important; height: 400px !important; }
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* -- Clearfix for the .slides element -- */
@@ -512,7 +512,7 @@ html[xmlns] .slides {display: block;}
 .slider-wrapper {
 	position: relative;
 	width: 630px;
-	height: 582px;
+	height: 482px;
 	margin-top: 20px;
 }
 
@@ -520,27 +520,25 @@ html[xmlns] .slides {display: block;}
 	position: relative;
 	width: 630px;
 	height: 400px;
-	top: 122px;
+	top: 0px;
 	bottom: 0px;
 }
 
 .flex-caption {
-	position:absolute;
-	left:0px;
-	top:-122px;
-	right:0px;
-	height:122px;
-	width:630px;
-	display:block;
-	background:#F9F9F9;
-	font-family:arial;
-	z-index: 8;
+  width: 100%;
+  padding: 0px;
+  left: 0;
+  bottom: 0;
+  background:#F9F9F9;
+  display:block;
+  font-size: 14px;
+  line-height: 18px;
+  z-index: 8;
 }
 
 .flex-caption h1 {
-	padding: 20px 20px 2px 20px;
+	padding: 4px 10px 2px 20px;
 	font-size: 18px;
-	font-weight: bold;
 	overflow: hidden;
 	line-height: 20px;
 	max-height: 20px;
@@ -549,6 +547,7 @@ html[xmlns] .slides {display: block;}
 
 .flex-caption a {
 	color: #050505;
+	font-weight: bold;
 }
 
 .flex-caption a:hover {
@@ -560,7 +559,13 @@ html[xmlns] .slides {display: block;}
 	line-height: 20px;
 	font-size: 12px;
 	overflow: hidden;
+	text-overflow: ellipsis;
 	max-height: 65px;
+	height: 44px;
+	display: inline-block;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
 
 .nivo-html-caption {
@@ -570,7 +575,7 @@ html[xmlns] .slides {display: block;}
 /* -- Direction Nav -- */
 .flex-direction-nav {
 	position: absolute;
-	top: 305px;
+	top: 242px;
 	left: 10px;
 	width: 600px;
 	height: 38px;
@@ -621,8 +626,8 @@ html[xmlns] .slides {display: block;}
 	background: rgba(0,0,0,0.6);
 	background: rgb(0,0,0)\0/;
 	position: absolute;
-	left: 20px;
-	bottom: -5px;
+	right: 20px;
+	bottom: 10px;
 	z-index: 10;
 }
 
