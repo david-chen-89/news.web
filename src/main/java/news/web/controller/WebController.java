@@ -3,15 +3,15 @@ package news.web.controller;
 import java.util.List;
 import java.util.Map;
 
-import news.web.model.Article;
-import news.web.model.Slide;
-import news.web.service.DataServiceI;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import news.comm.model.Article;
+import news.comm.model.Slide;
+import news.comm.service.DataServiceI;
 
 @Controller
 public class WebController {

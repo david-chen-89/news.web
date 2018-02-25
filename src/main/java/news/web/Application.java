@@ -8,7 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = { "news" })
 public class Application {
 
 	private static final Logger LOG = LoggerFactory.getLogger(Application.class);
