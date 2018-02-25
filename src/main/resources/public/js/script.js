@@ -47,20 +47,6 @@ $(document).ready(function($) {
     }
 
 	/*-------------------------------------------------*/
-	/* =  Superfish Menu
-	/*-------------------------------------------------*/
-	try {
-		$("ul.sf-menu").superfish({ 
-			autoArrows:  false, // disable generation of arrow mark-up 
-		    dropShadows: false,
-			delay: 50,
-			animation:  {opacity:'show', height:'show'}
-		});
-	} catch(err) {
-
-	}
-
-	/*-------------------------------------------------*/
 	/* =  Get first post type
 	/*-------------------------------------------------*/
 	$('#slider-item-icon').addClass($('.slides li:first-child a:first-child').attr('data-type'));
@@ -221,49 +207,49 @@ $(document).ready(function($) {
 	/* ---------------------------------------------------------------------- */
 	/*	Contact Map
 	/* ---------------------------------------------------------------------- */
-	var contact = {"lat":"42.672421", "lon":"21.16453899999999"}; //Change a map coordinate here!
-
-	try {
-		$('#map').gmap3({
-		    action: 'addMarker',
-		    latLng: [contact.lat, contact.lon],
-		    map:{
-		    	center: [contact.lat, contact.lon],
-		    	zoom: 14
-		   		},
-		    },
-		    {action: 'setOptions', args:[{scrollwheel:true}]}
-		);
-	} catch(err) {
-
-	}
+//	var contact = {"lat":"42.672421", "lon":"21.16453899999999"}; //Change a map coordinate here!
+//
+//	try {
+//		$('#map').gmap3({
+//		    action: 'addMarker',
+//		    latLng: [contact.lat, contact.lon],
+//		    map:{
+//		    	center: [contact.lat, contact.lon],
+//		    	zoom: 14
+//		   		},
+//		    },
+//		    {action: 'setOptions', args:[{scrollwheel:true}]}
+//		);
+//	} catch(err) {
+//
+//	}
 	
 	
 	/* ---------------------------------------------------------------------- */
 	/*	Contact Form
 	/* ---------------------------------------------------------------------- */
-	$('#submit').on('click', function(e){
-		e.preventDefault();
-
-		$this = $(this);
-		
-		$.ajax({
-			type: "POST",
-			url: 'contact.php',
-			dataType: 'json',
-			cache: false,
-			data: $('#contact').serialize(),
-			success: function(data) {
-
-				if(data.info != 'error'){
-					$this.parents('form').find('input[type=text],textarea,select').filter(':visible').val('');
-					$('#msg').hide().removeClass('success').removeClass('error').addClass('success').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
-				} else {
-					$('#msg').hide().removeClass('success').removeClass('error').addClass('error').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
-				}
-			}
-		});
-	});	
+//	$('#submit').on('click', function(e){
+//		e.preventDefault();
+//
+//		$this = $(this);
+//		
+//		$.ajax({
+//			type: "POST",
+//			url: 'contact.php',
+//			dataType: 'json',
+//			cache: false,
+//			data: $('#contact').serialize(),
+//			success: function(data) {
+//
+//				if(data.info != 'error'){
+//					$this.parents('form').find('input[type=text],textarea,select').filter(':visible').val('');
+//					$('#msg').hide().removeClass('success').removeClass('error').addClass('success').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
+//				} else {
+//					$('#msg').hide().removeClass('success').removeClass('error').addClass('error').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
+//				}
+//			}
+//		});
+//	});	
 	
 
 	/* ---------------------------------------------------------------------- */
@@ -302,41 +288,41 @@ $(document).ready(function($) {
 	/* ---------------------------------------------------------------------- */
 	/*	Main Menu Events
 	/* ---------------------------------------------------------------------- */
-	$('#main-menu-left-nav a').on('click', function(e){
-		e.preventDefault();
-		var _left = parseInt($('#sf-menu-container .sf-menu').css('left'));
-		if (_left < 0){
-			$('#sf-menu-container .sf-menu').stop(true,true).animate({'left': '+=110'}, 100, function(){
-				var _left = parseInt($('#sf-menu-container .sf-menu').css('left'));
+//	$('#main-menu-left-nav a').on('click', function(e){
+//		e.preventDefault();
+//		var _left = parseInt($('#sf-menu-container .sf-menu').css('left'));
+//		if (_left < 0){
+//			$('#sf-menu-container .sf-menu').stop(true,true).animate({'left': '+=110'}, 100, function(){
+//				var _left = parseInt($('#sf-menu-container .sf-menu').css('left'));
+//
+//				$('#main-menu-right-nav').fadeIn("fast");
+//
+//				if (_left == 0) {
+//					$('#main-menu-left-nav').fadeOut("fast");
+//				}
+//			});
+//		}
+//	});
 
-				$('#main-menu-right-nav').fadeIn("fast");
-
-				if (_left == 0) {
-					$('#main-menu-left-nav').fadeOut("fast");
-				}
-			});
-		}
-	});
-
-	$('#main-menu-right-nav a').on('click', function(e){
-		e.preventDefault();
-
-		var _left = parseInt($('#sf-menu-container .sf-menu').css('left'));
-		var _width = sf_menu_width + _left;
-
-		if (_left <= 0 && _width > parseInt($('#sf-menu-container').css('width'))){
-			$('#sf-menu-container .sf-menu').stop(true,true).animate({'left': '-=110'}, 100, function(){
-				var _left = parseInt($('#sf-menu-container .sf-menu').css('left'));
-				var _width = sf_menu_width + _left;
-
-				if (_width <= parseInt($('#sf-menu-container').css('width'))){
-					$('#main-menu-right-nav').fadeOut("fast");
-				}
-			});
-
-			$('#main-menu-left-nav').fadeIn("fast");
-		}
-	});
+//	$('#main-menu-right-nav a').on('click', function(e){
+//		e.preventDefault();
+//
+//		var _left = parseInt($('#sf-menu-container .sf-menu').css('left'));
+//		var _width = sf_menu_width + _left;
+//
+//		if (_left <= 0 && _width > parseInt($('#sf-menu-container').css('width'))){
+//			$('#sf-menu-container .sf-menu').stop(true,true).animate({'left': '-=110'}, 100, function(){
+//				var _left = parseInt($('#sf-menu-container .sf-menu').css('left'));
+//				var _width = sf_menu_width + _left;
+//
+//				if (_width <= parseInt($('#sf-menu-container').css('width'))){
+//					$('#main-menu-right-nav').fadeOut("fast");
+//				}
+//			});
+//
+//			$('#main-menu-left-nav').fadeIn("fast");
+//		}
+//	});
 
 	/* ---------------------------------------------------------------------- */
 	/*	Sub Menu Events
@@ -360,7 +346,7 @@ $(document).ready(function($) {
 		}
 	});
 
-	_masonry(); //Masonry Effect
+//	_masonry(); //Masonry Effect
 	
 	$(window).bind('resize', function(){
 		main_menu_scroll(); //Main Menu
@@ -453,9 +439,9 @@ function sub_menu_scroll(){
 /*-------------------------------------------------*/
 /* =  Masonry Effect
 /*-------------------------------------------------*/
-function _masonry(){
-	$('#sidebar').masonry({
-		itemSelector: '.masonry',
-		columnWidth: 320
-	});
-}
+//function _masonry(){
+//	$('#sidebar').masonry({
+//		itemSelector: '.masonry',
+//		columnWidth: 320
+//	});
+//}

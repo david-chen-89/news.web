@@ -478,8 +478,8 @@ p {
 #logo {
 	float: left;
 	padding: 1px 0px;
+	color: #bbb;
 }
-
 #logo > a{
 	color: #bbb;
 }
